@@ -1,5 +1,5 @@
-import Banner from "./section/home/banner/banner";
-import Post from "./section/home/post/post";
+import Banner from "./base/section/home/banner/banner";
+import Post from "./base/section/home/post/post";
 
 export default function Home() {
   return (

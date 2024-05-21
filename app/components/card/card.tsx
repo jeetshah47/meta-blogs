@@ -8,7 +8,7 @@ type CardProps = {
 const Card = ({ padding, children, width, border }: CardProps) => {
   return (
     <div
-      className={`bg-white rounded-xl ${padding ?? "p-2"} ${
+      className={`bg-white dark:bg-dark-primary rounded-xl ${padding ?? "p-2"} ${
         width ?? "w-full"
       } ${border ?? ""}`}
     >
