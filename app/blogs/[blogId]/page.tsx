@@ -1,3 +1,5 @@
+import { TracingBeam } from "@/app/components/motion/tracing-beam/tracing-beam";
+
 const Blog = () => {
   const DataMap: { [index: string]: string } = {
     "image-url-0": "/imgs/dummer.png",
@@ -8,7 +10,17 @@ const Blog = () => {
       "One of the most rewarding aspects of traveling is immersing yourself in the local culture and customs. This includes trying local cuisine, attending cultural events and festivals, and interacting with locals. Learning a few phrases in the local language can also go a long way in making connections and showing respect.",
     "text-para-3":
       "Before embarking on your journey, take the time to research your destination. This includes understanding the local culture, customs, and laws, as well as identifying top attractions, restaurants, and accommodations. Doing so will help you navigate your destination with confidence and avoid any cultural faux pas.",
-  };
+    "text-para-5":
+      "One of the most rewarding aspects of traveling is immersing yourself in the local culture and customs. This includes trying local cuisine, attending cultural events and festivals, and interacting with locals. Learning a few phrases in the local language can also go a long way in making connections and showing respect.",
+    "text-para-6":
+      "Before embarking on your journey, take the time to research your destination. This includes understanding the local culture, customs, and laws, as well as identifying top attractions, restaurants, and accommodations. Doing so will help you navigate your destination with confidence and avoid any cultural faux pas.",
+    "text-para-7":
+      "One of the most rewarding aspects of traveling is immersing yourself in the local culture and customs. This includes trying local cuisine, attending cultural events and festivals, and interacting with locals. Learning a few phrases in the local language can also go a long way in making connections and showing respect.",
+    "text-para-8":
+      "Before embarking on your journey, take the time to research your destination. This includes understanding the local culture, customs, and laws, as well as identifying top attractions, restaurants, and accommodations. Doing so will help you navigate your destination with confidence and avoid any cultural faux pas.",
+  
+  
+    };
 
   const generateJsx = (key: string, data: string) => {
     const dataKey = key.split("-");
@@ -26,10 +38,12 @@ const Blog = () => {
   };
 
   return (
-    <div className="text-primary dark:text-dark-primary flex justify-center">
-      <div className="w-[800px]">
+    <div className="">
+      <TracingBeam>
+      <div className="max-w-2xl mx-auto antialiased pt-4 relative">
         {Object.keys(DataMap).map((key) => generateJsx(key, DataMap[key]))}
       </div>
+      </TracingBeam>
     </div>
   );
 };

@@ -9,7 +9,7 @@ const TitleInput = () => {
   };
 
   return (
-    <div className="w-3/4 py-4">
+    <div className="py-4">
       {inputOn && (
         <input
           placeholder="Title"

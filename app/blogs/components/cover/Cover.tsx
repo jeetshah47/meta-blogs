@@ -13,7 +13,7 @@ const Cover = () => {
   };
 
   return (
-    <div className="w-3/4 min-h-80 bg-primary dark:bg-dark-secondary outline-none rounded font-bold text-2xl flex items-center justify-center">
+    <div className=" min-h-80 bg-primary dark:bg-dark-secondary outline-none rounded font-bold text-2xl flex items-center justify-center">
       {!image && (
         <>
           <input
