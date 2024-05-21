@@ -18,9 +18,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className + " " + "bg-white dark:bg-dark-primary dark:text-white duration-300"}>
+      <body
+        className={`${inter.className} bg-white dark:bg-dark-primary dark:text-white duration-300`}
+      >
         <div className="flex-initial  w-3/5 py-4">
-          <NavBar  />
+          <NavBar />
         </div>
         <div className="flex-auto w-3/5">{children}</div>
         <div className="flex-initial w-full flex justify-center bg-white-footer dark:bg-black-footer">

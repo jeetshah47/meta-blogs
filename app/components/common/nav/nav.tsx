@@ -12,6 +12,7 @@ const NavBar = () => {
         <Link href={"/"}>Home</Link>
         <Link href={"/blogs/1"}>Blog</Link>
         <Link href={"/dashboard"}>Dashboard</Link>
+        <Link href={"/blogs/new"}>Add</Link>
       </div>
       <div className="flex items-center gap-10">
         <input

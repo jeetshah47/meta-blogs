@@ -35,7 +35,8 @@ const config: Config = {
         "primary": "#3B3C4A",
         "dark-primary": "#BABABF",
         "head-dark": "#181A2A",
-        "head-primary": "#FFFFFF"
+        "head-primary": "#FFFFFF",
+        "table-head": "#B5B7C0"
       }
     },
   },
