@@ -8,8 +8,8 @@
   --background-end-rgb: 255, 255, 255;
 }
 
-
-body, html {
+body,
+html {
   height: 100%;
 }
 
@@ -29,4 +29,17 @@ body {
   body {
     display: block;
   }
+}
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: silver;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 0.8rem;
+  background-color: #9098c6;
 }

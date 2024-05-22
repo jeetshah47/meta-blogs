@@ -8,11 +8,10 @@ const NavBar = () => {
       <div>
         <p className="font-bold text-2xl">Meta Blogs</p>
       </div>
-      <div className="flex flex-1 justify-center gap-8">
+      <div className="flex flex-1 justify-center items-center gap-8">
         <Link href={"/"}>Home</Link>
         <Link href={"/blogs/1"}>Blog</Link>
-        <Link href={"/dashboard"}>Dashboard</Link>
-        <Link href={"/blogs/new"}>Add</Link>
+        <Link href={"/blogs/new"} className="rounded bg-blue text-white p-2">Write</Link>
       </div>
       <div className="flex items-center gap-10">
         <input

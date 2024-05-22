@@ -26,7 +26,7 @@ export default function RootLayout({
         </div>
         <div className="flex-auto py-8 w-full">{children}</div>
         <div className="flex-initial w-full flex justify-center  bg-white-footer dark:bg-black-footer">
-          <Footer />
+          {/* <Footer /> */}
         </div>
       </body>
     </html>
