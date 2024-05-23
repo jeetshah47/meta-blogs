@@ -1,10 +1,13 @@
+'use client';
+
 import Link from "next/link";
 import Toggle from "../../buttons/toggle";
 import Avatar from "../../avatar/avatar";
 
 const NavBar = () => {
+  
   return (
-    <div className="flex flex-1 justify-between items-center max-sm:hidden">
+    <div className={`flex flex-1 justify-between items-center max-sm:hidden `}>
       <div>
         <p className="font-bold text-2xl">Meta Blogs</p>
       </div>

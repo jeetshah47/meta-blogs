@@ -1,59 +1,39 @@
 import Accordion from "@/app/components/accordion/accordion";
 import React, { useState } from "react";
 import { Icon } from "@iconify/react";
+import ElementDiv from "./element-div";
 
 const ElementSection = () => {
-  const [current, setCurrent] = useState(0);
+  const [current, setCurrent] = useState(-1);
 
   return (
     <div>
       <Accordion
         active={current === 0}
         onClick={() => setCurrent(current === 0 ? -1 : 0)}
-        title="input box"
+        title="Text"
+        icon="mdi:text"
       >
-        <div className="bg-primary dark:bg-dark-secondary outline-none py-2 px-4 rounded flex justify-between items-center">
-          <p>Label</p>
-          <div className="flex gap-2 items-center">
-            <Icon fontSize={"24px"} icon={"gg:add"} />
-            <Icon fontSize={"24px"} icon={"material-symbols:info-outline"} />
-          </div>
-        </div>
-        <div className="py-3" />
-        <div className=" bg-primary dark:bg-dark-secondary outline-none py-2 px-4 rounded h-20 w-full  flex justify-between items-start">
-          <p>Paragrah</p>
-          <div className="flex gap-2 items-center">
-            <Icon fontSize={"24px"} icon={"gg:add"} />
-            <Icon fontSize={"24px"} icon={"material-symbols:info-outline"} />
-          </div>
-        </div>
-        <div className="py-3" />
-
-        <picture>
-          <img alt="Image" src="/imgs/dummer.png" />
-        </picture>
+        <ElementDiv text="Label" desc="A simple one line text" icon="fluent:text-16-filled" />
+        <ElementDiv text="Paragraph" desc="A long para text" icon="hugeicons:paragraph" />
       </Accordion>
       <Accordion
         active={current === 1}
         onClick={() => setCurrent(current === 1 ? -1 : 1)}
-        title="input box"
+        title="Media"
+        icon="fluent-mdl2:media-add"
       >
-        <input
-          placeholder="Label"
-          className=" bg-primary dark:bg-dark-secondary outline-none py-2 px-4 rounded"
-          disabled
-        />
-        <div className="py-3" />
-        <textarea
-          placeholder="Paragraph"
-          className=" bg-primary dark:bg-dark-secondary outline-none py-2 px-4 rounded h-20 w-full"
-          disabled
-        ></textarea>
-        <div className="py-3" />
-
-        <picture>
-          <img alt="Image" src="/imgs/dummer.png" />
-        </picture>
+        <ElementDiv text="Image" desc="A long para text" icon="ph:image" />
+      </Accordion>
+      <Accordion
+        active={current === 2}
+        onClick={() => setCurrent(current === 2 ? -1 : 2)}
+        title="Section"
+        icon="ph:brackets-angle-duotone"
+      >
+        <div className="bg-primary dark:bg-dark-secondary outline-none py-2 px-4 rounded flex justify-between items-center">
+          <p>Code Box</p>
+        </div>
       </Accordion>
     </div>
   );
