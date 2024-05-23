@@ -3,7 +3,11 @@ import React, { useState } from "react";
 import { Icon } from "@iconify/react";
 import ElementDiv from "./element-div";
 
-const ElementSection = () => {
+type ElementProps = {
+  addElement: (name: string) => void;
+}
+
+const ElementSection = ({addElement}:ElementProps) => {
   const [current, setCurrent] = useState(-1);
 
   return (
@@ -14,8 +18,8 @@ const ElementSection = () => {
         title="Text"
         icon="mdi:text"
       >
-        <ElementDiv text="Label" desc="A simple one line text" icon="fluent:text-16-filled" />
-        <ElementDiv text="Paragraph" desc="A long para text" icon="hugeicons:paragraph" />
+        <ElementDiv add={() => addElement("text-label")} text="Label" desc="A simple one line text" icon="fluent:text-16-filled" />
+        <ElementDiv add={() => addElement("text-para")} text="Paragraph" desc="A long para text" icon="hugeicons:paragraph" />
       </Accordion>
       <Accordion
         active={current === 1}
@@ -23,7 +27,7 @@ const ElementSection = () => {
         title="Media"
         icon="fluent-mdl2:media-add"
       >
-        <ElementDiv text="Image" desc="A long para text" icon="ph:image" />
+        <ElementDiv add={() => addElement("media-image")} text="Image" desc="A long para text" icon="ph:image" />
       </Accordion>
       <Accordion
         active={current === 2}
@@ -31,9 +35,7 @@ const ElementSection = () => {
         title="Section"
         icon="ph:brackets-angle-duotone"
       >
-        <div className="bg-primary dark:bg-dark-secondary outline-none py-2 px-4 rounded flex justify-between items-center">
-          <p>Code Box</p>
-        </div>
+        <ElementDiv add={() => addElement("section-code")} text="Code" desc="A code formatted section" icon="tdesign:code" />
       </Accordion>
     </div>
   );

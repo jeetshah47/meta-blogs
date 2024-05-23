@@ -4,11 +4,12 @@ type ElementType = {
     text: string;
     icon?: string;
     desc: string;
+    add: () => void;
 };
 
-const ElementDiv = ({ text, icon, desc }: ElementType) => {
+const ElementDiv = ({ text, icon, desc, add }: ElementType) => {
     return (
-        <div className="">
+        <div onClick={add}>
             <div className="py-2 px-4  rounded gap-2 flex items-center hover:bg-primary hover:dark:bg-dark-secondary cursor-pointer">
                 <div className="p-2 rounded bg-white dark:bg-dark-secondary dark:text-white">{icon && <Icon fontSize={"24px"} icon={icon} />}
                 </div>
