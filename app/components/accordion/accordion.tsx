@@ -19,7 +19,7 @@ const Accordion = ({
 }: AccordionProps) => {
   const contentRef = useRef(null);
   return (
-    <div className="border-gray-200 pt-2 ">
+    <div className="border-gray-200 pt-2">
       <button
         className="flex justify-between w-full p-2 text-left text-gray-800  items-center focus:outline-none dark:text-dark-primary"
         onClick={onClick}

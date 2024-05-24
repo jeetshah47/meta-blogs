@@ -27,10 +27,10 @@ export default function RootLayout({
         <div className="flex-initial  w-3/5 py-4">
           <NavBar />
         </div>
-        <div className="flex-auto w-full">{children}</div>
-        <div className="flex-initial w-full flex justify-center  bg-white-footer dark:bg-black-footer">
-          {/* <Footer /> */}
-        </div>
+        <div className="flex-auto w-full flex flex-col">{children}</div>
+        {/* <div className="flex-initial w-full flex justify-center  bg-white-footer dark:bg-black-footer">
+          <Footer />
+        </div> */}
       </body>
     </html>
   );

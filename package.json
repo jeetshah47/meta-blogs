@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@ckeditor/ckeditor5-build-classic": "^41.4.2",
+    "@ckeditor/ckeditor5-react": "^7.0.0",
     "@iconify/react": "^4.1.1",
     "@reduxjs/toolkit": "^2.2.5",
     "clsx": "^2.1.1",
