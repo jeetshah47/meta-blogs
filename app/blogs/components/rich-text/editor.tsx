@@ -2,12 +2,17 @@ import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { useRef } from 'react';
 
-const  Editor = () => {
+type EditorProps = {
+  height?: number | string;
+}
+
+const  Editor = ({height}:EditorProps) => {
   const ref = useRef(null);
   
   return (
-    <div className='App'>
+    <div className='App py-2'>
       <CKEditor
+        
         editor={ ClassicEditor }
         data="<p>Write here ...</p>"
         config={{
@@ -17,8 +22,8 @@ const  Editor = () => {
             '|', 'fontfamily', 'fontsize', 'fontColor', 'fontBackgroundColor',
             '|', 'bold', 'italic', 'strikethrough', 'subscript', 'superscript', 'code',
             '|', 'link', 'blockQuote', 'codeBlock',
-            '|', 'bulletedList', 'numberedList', 'todoList', 'outdent', 'indent']
-          }
+            '|', 'bulletedList', 'numberedList', 'todoList', 'outdent', 'indent'],
+          },
         }}        
         onReady={ ( editor ) => {
           console.log( "CKEditor5 React Component is ready to use!", editor );
