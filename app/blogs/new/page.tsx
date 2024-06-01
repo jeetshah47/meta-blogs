@@ -34,7 +34,6 @@ const NewBlog = () => {
       setRect(ref.current.getBoundingClientRect());
     }
     return () => {
-
     }
   }, []);
 
@@ -44,28 +43,12 @@ const NewBlog = () => {
     setElements([...clone]);
   };
 
-  // useEffect(() => {
-  //   readData(fieldId.toString(),(x, y) => setCoordinates({x: x, y: y}));
-  // },[fieldId])
-
   const mouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     console.log("windows", window.scrollX)
     if(rect) {
       socket.emit('mouse-event', {x: e.clientX - rect.left, y: e.clientY - rect.top})
     }
-      // addData(fieldId.toString(), e.clientX - rect.left, e.clientY - rect.top)
   }
-  // {!elements.length && (
-  //   <p className="text-secondary font-semibold text-2xl text-center">
-  //     Add Elements From Section{" "}
-  //   </p>
-  // )}
-
-  // useEffect(() => {
-  //   // console.log(coordinates);
-  //   // console.log(window.scrollX);
-    
-  // },[coordinates])
 
   useEffect(() => {
     socket.on("mouse-receive", (message) => {
@@ -78,14 +61,6 @@ const NewBlog = () => {
 
   return (
     <div className="flex gap-4 flex-auto px-6 ">
-      <div className="w-1/5 flex-auto border-r dark:border-dark-secondary flex flex-col relative">
-        <div className="relative flex-auto w-full">
-          {/* <p className="font-bold text-2xl">Elements</p> */}
-          <div className="overflow-auto h-full top-0 absolute w-full">
-            <ElementSection addElement={handleAddElement} />
-          </div>
-        </div>
-      </div>
       <div className="w-full flex flex-col items-center ">
         <div className="w-3/5 h-full border relative" ref={ref} onMouseMove={mouseMove}>
         {/* <FollowPointer x={coordinates.x} y={coordinates.y} /> */}
