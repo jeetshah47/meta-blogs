@@ -13,7 +13,7 @@ const LoginForm = () => {
 
   useEffect(() => {
     const fetchGoogleUrl = async () => {
-      const res = await fetch("https://616b-49-43-33-130.ngrok-free.app/api/auth/google");
+      const res = await fetch("http://localhost:3000/api/auth/google");
       const data = await res.json();
       setAuthUrl(data.auth.url);
     };

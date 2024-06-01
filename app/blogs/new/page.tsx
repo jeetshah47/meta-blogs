@@ -6,7 +6,7 @@ import Input from "../components/elements/input";
 import Editor from "../components/rich-text/editor";
 import { FollowerPointerCard, FollowPointer } from "@/app/components/motion/following-pointer/following-pointer";
 import { readData, addData } from '@/utils/firestore';
-// const socket = io('http://localhost:3001')
+const socket = io('http://localhost:3001')
 const NewBlog = () => {
   const [elements, setElements] = useState<string[]>([]);
   const [coordinates, setCoordinates] = useState({x: 0, y: 0});
@@ -44,15 +44,16 @@ const NewBlog = () => {
     setElements([...clone]);
   };
 
-  useEffect(() => {
-    readData(fieldId.toString(),(x, y) => setCoordinates({x: x, y: y}));
-  },[fieldId])
+  // useEffect(() => {
+  //   readData(fieldId.toString(),(x, y) => setCoordinates({x: x, y: y}));
+  // },[fieldId])
 
   const mouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     console.log("windows", window.scrollX)
-    if(rect)
-      addData(fieldId.toString(), e.clientX - rect.left, e.clientY - rect.top)
-    // socket.emit('mouse-event', {x: e.clientX - rect.left, y: e.clientY - rect.top})
+    if(rect) {
+      socket.emit('mouse-event', {x: e.clientX - rect.left, y: e.clientY - rect.top})
+    }
+      // addData(fieldId.toString(), e.clientX - rect.left, e.clientY - rect.top)
   }
   // {!elements.length && (
   //   <p className="text-secondary font-semibold text-2xl text-center">
@@ -67,12 +68,12 @@ const NewBlog = () => {
   // },[coordinates])
 
   useEffect(() => {
-    // socket.on("mouse-receive", (message) => {
-    //   if(socket.id !== message.id) {
-    //     console.log("client", message);
-    //     setCoordinates({x: message.coor.x, y: message.coor.y})
-    //   }
-    // })
+    socket.on("mouse-receive", (message) => {
+      if(socket.id !== message.id) {
+        console.log("client", message);
+        setCoordinates({x: message.coor.x, y: message.coor.y})
+      }
+    })
   }, [])
 
   return (
@@ -87,10 +88,10 @@ const NewBlog = () => {
       </div>
       <div className="w-full flex flex-col items-center ">
         <div className="w-3/5 h-full border relative" ref={ref} onMouseMove={mouseMove}>
-        <FollowPointer x={coordinates.x} y={coordinates.y} />
+        {/* <FollowPointer x={coordinates.x} y={coordinates.y} /> */}
           {/* <FollowerPointerCard title="Me">
-            {elements.map((element, index) => generateElement(element, index))}
           </FollowerPointerCard> */}
+          {elements.map((element, index) => generateElement(element, index))}
         </div>
       </div>
     </div>
